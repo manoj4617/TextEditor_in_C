@@ -26,17 +26,15 @@ void enable_rawmode(){
 int main(){
     enable_rawmode();
     char c;
-    while(read(STDIN_FILENO, &c, 1) == 1 && 
-           c != 'q'){
+    while(read(STDIN_FILENO, &c, 1) == 1 && c != 'q' && c != 'Q'){
 
-            if(iscntrl(c)){
-                printf("%d\n",c);
-            }
-            else{
-                printf("%d ('%c')\n", c, c);
-            }
-
-           };
+        if(iscntrl(c)){
+            printf("%d\n",c);
+        }
+        else{
+            printf("%d ('%c')\n", c, c);
+        }
+    };
 
     
     return 0;
