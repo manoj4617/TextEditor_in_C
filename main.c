@@ -216,10 +216,25 @@ void init_editor(){
 }
 int main(){
     enable_rawmode();
+<<<<<<< HEAD
     init_editor();
     while(1){
         editor_refresh_screen();
         editor_process_keypress();
     };
+=======
+    char c;
+    while(read(STDIN_FILENO, &c, 1) == 1 && c != 'q' && c != 'Q'){
+
+        if(iscntrl(c)){
+            printf("%d\n",c);
+        }
+        else{
+            printf("%d ('%c')\n", c, c);
+        }
+    };
+
+    
+>>>>>>> cc9493f0ff0db23a4294bac12595b7e489c274d8
     return 0;
 }
